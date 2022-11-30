@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <!--meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"-->
+    <title>rl</title>
+    <style media='screen' type='text/css'>
+      @font-face {
+      font-family: bbt;
+      src: url('font/bbt.ttf');
+      }
+      .fontLoader {
+      position: absolute;
+      left: -1000px;
+      visibility: hidden;
+      }
+    </style>
+    <div class='fontLoader' style='font-family: bbt;'>-</div>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <script>
+    
+    function resize()
+    {
+      canvas = document.querySelector("canvas");
+      let windowWidth = window.innerWidth;
+      let windowHeight = window.innerHeight;
+      let windowRatio = windowWidth / windowHeight;
+      let gameRatio = (80*8) / (24*12);
+      if(windowRatio < gameRatio)
+      {
+        canvas.style.width = windowWidth + "px";
+        canvas.style.height = (windowWidth / gameRatio) + "px";
+      }
+      else
+      {
+        canvas.style.width = (windowHeight * gameRatio) + "px";
+        canvas.style.height = windowHeight + "px";
+      };
+    };
+    
+    window.onload = function ()
+    {
+      window.addEventListener("resize", resize, false);
+      resize();
+    };
+    
+  </script>
+    <script src="./rot/rot.js"></script>
+    <script src="./js/entity.js"></script>
+    <script src="./js/main.js"></script>
+  </head>
+  <body>
+  </body>
+</html>
